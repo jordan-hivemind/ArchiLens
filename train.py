@@ -35,6 +35,6 @@ model = models.Sequential([
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # Training
-model.fit(train_generator, epochs=20)
+model.fit(train_generator, epochs=30)
 
-model.save('../archilens-model.keras')
+model.save('archilens-model.h5')

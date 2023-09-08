@@ -2,16 +2,18 @@ import json
 import os
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import load_model
+from keras.optimizers import Adam
 import numpy as np
 
 # Load the class labels
 with open('class_labels.json', 'r') as f:
     class_labels = json.load(f)
 
-model = load_model('../archilens-model.keras')
+model = load_model('archilens-model.h5')
+model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accuracy'])
 
 # Folder containing all test images
-test_folder = "../test-images"
+test_folder = "test-images"
 
 # Loop through all files in the folder
 for filename in os.listdir(test_folder):
