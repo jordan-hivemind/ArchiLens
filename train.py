@@ -6,7 +6,7 @@ number_of_classes = 25
 
 # Data Preprocessing
 train_datagen = ImageDataGenerator(rescale=1./255, rotation_range=20, width_shift_range=0.2, height_shift_range=0.2, horizontal_flip=True)
-train_generator = train_datagen.flow_from_directory('/Users/jordanschwartz/Library/CloudStorage/Dropbox/z - Miscellaneous/python/ArchiLens/architectural-images-training-set/architectural-styles-dataset', target_size=(224, 224), batch_size=32, class_mode='categorical')
+train_generator = train_datagen.flow_from_directory('../architectural-images-training-set/architectural-styles-dataset', target_size=(224, 224), batch_size=32, class_mode='categorical')
 
 # Save the class labels to a JSON file
 class_indices = train_generator.class_indices
@@ -32,4 +32,4 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 # Training
 model.fit(train_generator, epochs=20)
 
-model.save('/Users/jordanschwartz/Library/CloudStorage/Dropbox/z - Miscellaneous/python/ArchiLens/archilens-model.keras')
+model.save('../archilens-model.keras')

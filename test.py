@@ -8,10 +8,10 @@ import numpy as np
 with open('class_labels.json', 'r') as f:
     class_labels = json.load(f)
 
-model = load_model('/Users/jordanschwartz/Library/CloudStorage/Dropbox/z - Miscellaneous/python/ArchiLens/archilens-model.keras')
+model = load_model('../archilens-model.keras')
 
 # Folder containing all test images
-test_folder = "/Users/jordanschwartz/Library/CloudStorage/Dropbox/z - Miscellaneous/python/ArchiLens/test-images"
+test_folder = "../test-images"
 
 # Loop through all files in the folder
 for filename in os.listdir(test_folder):
