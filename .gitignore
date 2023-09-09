@@ -1,4 +1,5 @@
 architectural-images-training-set/
 archilens.model.keras
 archilens-model.h5
+archilens-model.pth
 .venv/
