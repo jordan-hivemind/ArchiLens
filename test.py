@@ -9,7 +9,8 @@ import numpy as np
 with open('class_labels.json', 'r') as f:
     class_labels = json.load(f)
 
-model = load_model('archilens-model.h5')
+# model = load_model('archilens-model.h5') # Model built from scratch
+model = load_model('archilens-model-finetuned.h5') # Pre-trained
 model.compile(optimizer=Adam(), loss='categorical_crossentropy', metrics=['accuracy'])
 
 # Folder containing all test images
